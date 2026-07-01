@@ -7,8 +7,8 @@ public:
 
     std::string nameOfTask;
      int taskDuration;
-    bool isFinish;
-    Task(const std::string &nameOfTask,int taskDuration, bool isFinish = false);
+    bool isFinished;
+    Task(const std::string &nameOfTask,int taskDuration, bool isFinished = false);
 };
 
 #endif // TASK_HPP_INCLUDED
