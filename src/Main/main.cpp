@@ -3,6 +3,7 @@
 using namespace std;
 #include <string>
 
+
 int main()
 {
     TaskManager taskManager{};
@@ -17,10 +18,9 @@ int main()
        cout << "2. show the list Tasks " << endl;
        cout << "3. Mark a Task at Finish  " << endl;
        cout << "4. quit " << endl;
+
+
        cin >> reponse;
-
-
-
 
    if (reponse == 1)
    {
@@ -30,6 +30,7 @@ int main()
         getline(cin,name );
         int duration;
         cin>> duration;
+        cin.ignore();
         Task task {name,duration};
         taskManager.addTask(task);
 }
@@ -52,7 +53,15 @@ if (reponse == 3)
 }
 
 
+
+
 }
+if(reponse == 4)
+{
+    taskManager.saveToFile("../../data/tasks.txt");
+    cout << "Programm Finish  " << endl;
+}
+
 
 
         cout << "Programm Finish  " << endl;
