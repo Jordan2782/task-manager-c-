@@ -1,5 +1,6 @@
 #include "../../include/taskManager.hpp"
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 
@@ -23,4 +24,22 @@ bool TaskManager::markedAsFinished(int pos )
       return true;
   }
   return false ;
+}
+
+void TaskManager::saveToFile(const std::string &pfad)
+{
+    std::ofstream data(pfad,ios::out);
+    if(data.fail())
+    {
+        std::cerr<< "Pfad was not found " <<std::endl;
+        return;
+    }
+
+
+
+     for(Task t:listOfTask)
+    {
+        data << t.nameOfTask << " " << t.taskDuration <<std::endl;
+    }
+    data.close();
 }
