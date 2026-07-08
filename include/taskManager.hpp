@@ -13,6 +13,7 @@ public:
     void addTask(const Task &task);
     bool markedAsFinished(int pos );
     void saveToFile(const std::string &pfad);
+    void loadFromFile(const std::string &pfad);
 
 };
 #endif // TASKMANAGER_HPP_INCLUDED
